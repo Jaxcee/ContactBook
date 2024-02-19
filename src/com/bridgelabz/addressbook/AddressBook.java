@@ -27,14 +27,25 @@ public class AddressBook {
 public void displayContact()
 {
     System.out.println("Name:"+firstName+" "+lastName);
-    System.out.println("Address"+address);
+    System.out.println("Address :"+address);
     System.out.println("City:"+city);
     System.out.println("State"+state);
     System.out.println("Zip:"+zip);
     System.out.println("Phone Number"+phoneNumber);
     System.out.println("Email"+email);
 }
-
+    public String toString() {
+        return "addressbook{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zip='" + zip + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 
 public static void main(String[] args) {
 
@@ -42,9 +53,9 @@ public static void main(String[] args) {
 
 
 
-    System.out.println("Enter First Name");
+    System.out.println("Enter First Name:");
     String firstName = scanner.nextLine();
-    System.out.println("Enter Last Name");
+    System.out.println("Enter Last Name:");
     String lastName = scanner.nextLine();
 
     System.out.println("Enter Address: ");
@@ -66,7 +77,7 @@ public static void main(String[] args) {
     String email = scanner.nextLine();
 
     AddressBook newContact = new AddressBook(firstName, lastName, address, city, state, zip, phoneNumber, email);
-
+    System.out.println(newContact);
     newContact.displayContact();
     scanner.close();
 }
