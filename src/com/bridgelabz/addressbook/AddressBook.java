@@ -90,9 +90,11 @@ public class AddressBook {
         AddressBook newContact = new AddressBook(firstName, lastName, address, city, state, zip, phoneNumber, email);
         System.out.println(newContact);
         newContact.displayContact();
-        System.out.println("Do you want to edit any contact? (yes/no)");
-        String editChoice = scanner.nextLine();
-        if (editChoice.equalsIgnoreCase("yes")) {
+
+        System.out.println("Do you want to edit or delete any contact? (edit/delete/no)");
+        String choice = scanner.nextLine();
+
+        if (choice.equalsIgnoreCase("edit")) {
             System.out.println("What do you want to edit? (address/city/state/zip/phoneNumber/email)");
             String fieldToEdit = scanner.nextLine();
             System.out.println("Enter new value:");
@@ -123,6 +125,15 @@ public class AddressBook {
 
             System.out.println("Contact updated:");
             newContact.displayContact();
+        } else if (choice.equalsIgnoreCase("delete")) {
+            System.out.println("Are you sure you want to delete this contact? (yes/no)");
+            String deleteChoice = scanner.nextLine();
+            if (deleteChoice.equalsIgnoreCase("yes")) {
+                newContact = null;
+                System.out.println("Contact deleted.");
+            }
+        } else {
+            System.out.println("No changes made.");
         }
 
         scanner.close();
