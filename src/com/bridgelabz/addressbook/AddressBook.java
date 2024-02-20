@@ -24,7 +24,7 @@ public class AddressBook {
         this.email = email;
     }
 
-    // Getter methods
+
     public String getFirstName() {
         return firstName;
     }
